@@ -1,6 +1,13 @@
 import React from 'react';
 
-function Card({name, price, concentration, size, img, index}) {
+function Card({name, price, concentration, size, img, index, inputValue}) {
+
+    const alcoholCalc = () => {
+        const result = price*2
+
+        return result
+    }
+
     return (
         <div className="col mb-5" key={index}>
         <div className={"card h-100"}>
@@ -20,6 +27,11 @@ function Card({name, price, concentration, size, img, index}) {
             {size && (
                 <div className="d-flex justify-content-between">
                 <strong>Size:</strong> <span>{size} ml</span>
+                </div>
+            )}
+            {inputValue && (
+                <div className='d-flex justify-content-between'>
+                    <strong>Gowno:</strong> <span>{alcoholCalc()}</span>
                 </div>
             )}
             </div>
