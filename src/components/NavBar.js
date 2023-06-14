@@ -1,3 +1,5 @@
+import ModalButton from "./modals/addModal";
+
 function NavBar({title}) {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -8,6 +10,7 @@ function NavBar({title}) {
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                     <li className="nav-item"><a className="nav-link active" aria-current="page" href="#!">Home</a></li>
                 </ul>
+                <ModalButton modalText="Dodaj nowy alkohol" />
                 {/* <form className="d-flex">
                     <button className="btn btn-outline-dark" type="submit">
                         <i className="bi-cart-fill me-1"></i>
