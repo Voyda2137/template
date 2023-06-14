@@ -10,16 +10,16 @@ function Card({name, price, concentration, size, img, index}) {
             <h5 className="fw-bolder">{name}</h5>
             <div className="d-flex flex-wrap flex-column ">
             <div className="d-flex justify-content-between">
-                <strong>Price:</strong> <span>{price}</span>
+                <strong>Price:</strong> <span>{price} zł</span>
             </div>
             {concentration && (
                 <div className="d-flex justify-content-between">
-                <strong>Concentration:</strong> <span>{concentration}</span>
+                <strong>Concentration:</strong> <span>{(concentration*100).toFixed(1)}%</span>
                 </div>
             )}
             {size && (
                 <div className="d-flex justify-content-between">
-                <strong>Size:</strong> <span>{size}</span>
+                <strong>Size:</strong> <span>{size} ml</span>
                 </div>
             )}
             </div>
