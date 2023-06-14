@@ -1,14 +1,9 @@
 export const alcoholAmountCalc = (alcoholPrice, money) => {
-    if (alcoholPrice > money) {
-        return 0
-    }
-
-    const buyableAmount = Math.floor(money / alcoholPrice);
-    return buyableAmount;
+    return alcoholPrice > money ? 0 : Math.floor(money / alcoholPrice);
 }
 export const alcoholTotalPure = (alcoholConcentration, alcoholSize, amount) => {
-    if (amount === 0) return 0
-    else {
-        return alcoholSize * alcoholConcentration * amount
-    }
+    return amount === 0 ? 0 : alcoholSize * alcoholConcentration * amount;
+}
+export const alcoholInOrganism = (alcoholAmount, weight) => {
+    return alcoholAmount === 0 ? 0 : (alcoholAmount / (weight * 0.7)).toFixed(2)
 }

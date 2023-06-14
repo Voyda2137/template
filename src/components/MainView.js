@@ -5,11 +5,11 @@ import Section from "./Section"
 
 function MainView() {
     const [inputValue, setInputValue] = useState(null);
-    console.log(inputValue)
+    const [weightValue, setWeightValue] = useState(null)
     return (
         <>
-            <Header header='Drip drip Bratku' setInputValue={setInputValue} />
-            <Section inputValue={inputValue} />
+            <Header header='Drip drip Bratku' setInputValue={setInputValue} setWeightValue={setWeightValue} />
+            <Section inputValue={inputValue} weightValue={weightValue} />
         </>
     )
 }

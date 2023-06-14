@@ -2,7 +2,7 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 
-function Header({header, setInputValue}) {
+function Header({header, setInputValue, setWeightValue}) {
     return (
         <header className="bg-dark py-5">
         <div className="container px-4 px-lg-5 my-5">
@@ -14,10 +14,16 @@ function Header({header, setInputValue}) {
         <Form className='container'>
                 <Form.Group as={Row} className='m-4'>
                     <Form.Label column sm="2" style={{color: 'white'}}>
-                        Sos
+                        Sos brachu
                     </Form.Label>
                     <Col sm="10">
                         <Form.Control type="number" placeholder="piniadz" onChange={(e) => setInputValue(e.target.value)} />
+                    </Col>
+                    <Form.Label column sm="2" style={{color: 'white'}} className='my-4'>
+                        Waga brachu
+                    </Form.Label>
+                    <Col sm="10" className='my-4'>
+                        <Form.Control type="number" placeholder="waga" onChange={(e) => setWeightValue(e.target.value)} />
                     </Col>
                 </Form.Group>
             </Form>

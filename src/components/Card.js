@@ -1,6 +1,6 @@
 import React from 'react';
-import {alcoholAmountCalc, alcoholTotalPure} from '../service/AlcoholFunctions'
-function Card({name, price, concentration, size, img, index, inputValue}) {
+import {alcoholAmountCalc, alcoholTotalPure, alcoholInOrganism} from '../service/AlcoholFunctions'
+function Card({name, price, concentration, size, img, index, inputValue, weightValue}) {
 
     return (
 
@@ -34,6 +34,10 @@ function Card({name, price, concentration, size, img, index, inputValue}) {
                 <strong>Łącznie alkoholu:</strong>
                 <span>{alcoholTotalPure(concentration, size, alcoholAmountCalc(price, inputValue))} ml</span>
                 </div>
+                    <div className='d-flex justify-content-between'>
+                        <strong>Promile po wypiciu:</strong>
+                        <span>{alcoholInOrganism(alcoholTotalPure(concentration, size, alcoholAmountCalc(price, inputValue)), weightValue)}‰</span>
+                    </div>
                 </>
             )}
             </div>

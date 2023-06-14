@@ -3,7 +3,7 @@ import { fetchData } from '../service/backendCalls';
 import Card from "./Card";
 import {PacmanLoader} from 'react-spinners'
 
-function Section({inputValue}) {
+function Section({inputValue, weightValue}) {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -28,7 +28,7 @@ function Section({inputValue}) {
                 {isLoading && <PacmanLoader />}
                 {data.map((item, i) => {
                     return (
-                        <Card {...item} index={i} inputValue={inputValue} />
+                        <Card {...item} index={i} inputValue={inputValue} weightValue={weightValue} />
                     )
                 })}
             </div>
