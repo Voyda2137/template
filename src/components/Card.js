@@ -1,14 +1,9 @@
 import React from 'react';
-
+import {alcoholAmountCalc, alcoholTotalPure} from '../service/AlcoholFunctions'
 function Card({name, price, concentration, size, img, index, inputValue}) {
 
-    const alcoholCalc = () => {
-        const result = price*2
-
-        return result
-    }
-
     return (
+
         <div className="col mb-5" key={index}>
         <div className={"card h-100"}>
         {img ? <img className="card-img-top" src={img} alt={[index, name].join('-')} /> : <img className="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt={`${[index,name].join('-')} template 450x300`} />}
@@ -30,9 +25,16 @@ function Card({name, price, concentration, size, img, index, inputValue}) {
                 </div>
             )}
             {inputValue && (
+                <>
                 <div className='d-flex justify-content-between'>
-                    <strong>Gowno:</strong> <span>{alcoholCalc()}</span>
+                    <strong>Możesz kupić:</strong>
+                    <span>{alcoholAmountCalc(price, inputValue)}</span>
                 </div>
+                <div className='d-flex justify-content-between'>
+                <strong>Łącznie alkoholu:</strong>
+                <span>{alcoholTotalPure(concentration, size, alcoholAmountCalc(price, inputValue))} ml</span>
+                </div>
+                </>
             )}
             </div>
         </div>
