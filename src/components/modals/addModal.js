@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
 import { addAlcohol } from '../../service/backendCalls';
+
+
 const ModalButton = ({modalText}) => {
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
-    id: Math.floor(Math.random() * 5000) + 1,
     name: '',
     price: '',
     concentration: '',
@@ -19,15 +20,16 @@ const ModalButton = ({modalText}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+    addAlcohol(formData)
     setFormData({
-      id: '',
       name: '',
       price: '',
       concentration: '',
       size: '',
       img: ''
     });
-    addAlcohol(formData)
+    console.log(formData);
+
     setShowModal(false);
   };
   const handleOpenModal = () => {
@@ -78,7 +80,7 @@ const ModalButton = ({modalText}) => {
 
         </Modal.Body>
         <Modal.Footer>
-            <Button variant="secondary" type="reset" data-dismiss="modal">
+            <Button variant="secondary" type="reset" onClick={handleCloseModal}>
                 Close
             </Button>
             <Button variant="primary" type="submit" onClick={handleSubmit}>
