@@ -1,10 +1,10 @@
+import React from 'react';
 
-
-function Card({id, name, price, concentration, size, img}) {
+function Card({name, price, concentration, size, img, index}) {
     return (
-        <div className="col mb-5" key={id}>
-        <div className={"card h-100 "}>
-        {img ? <img className="card-img-top" src={img} alt={[id, name].join('-')} /> : <img className="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt={`${[id,name].join('-')} template 450x300`} />}
+        <div className="col mb-5" key={index}>
+        <div className={"card h-100"}>
+        {img ? <img className="card-img-top" src={img} alt={[index, name].join('-')} /> : <img className="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt={`${[index,name].join('-')} template 450x300`} />}
         <div className="card-body p-4">
         <div className="text-center">
             <h5 className="fw-bolder">{name}</h5>
