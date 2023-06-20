@@ -17,7 +17,7 @@ export const timeToBeSober = alcoholPercent => {
         return undefined;
     }
     else {
-        const hours = Math.floor(alcoholPercent / 0.15);
+        const hours = Math.floor(alcoholPercent / 0.15); // znalazlem taki wzor do wyliczania trzezwienia
         const minutes = Math.round((alcoholPercent / 0.15 - hours) * 60);
         return `${hours} godz. ${minutes} min.`;
     }
