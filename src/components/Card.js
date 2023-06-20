@@ -1,10 +1,10 @@
 import React from 'react';
-import {alcoholAmountCalc, alcoholTotalPure, alcoholInOrganism, timeToBeSober} from '../service/AlcoholFunctions';
+import { alcoholAmountCalc, alcoholInOrganism, timeToBeSober } from '../service/AlcoholFunctions';
 
-function Card({name, price, concentration, size, img, index, inputValue, weightValue}) {
+function Card({name, price, concentration, size, totalPureAlcohol, img, index, inputValue, weightValue}) {
 
     const alcoholAmount = alcoholAmountCalc(price, inputValue)
-    const totalPureAlcohol = alcoholTotalPure(concentration, size, alcoholAmount)
+    // const totalPureAlcohol = alcoholTotalPure(concentration, size, alcoholAmount)
     const totalAlcoholInOrganism = alcoholInOrganism(totalPureAlcohol, weightValue)
     const timeToSober = timeToBeSober(totalAlcoholInOrganism)
 
