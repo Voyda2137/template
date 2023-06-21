@@ -4,6 +4,12 @@ export const alcoholAmountCalc = (alcoholPrice, money) => {
 export const alcoholTotalPure = (alcoholConcentration, alcoholSize, amount) => {
     return amount === 0 ? 0 : alcoholSize * alcoholConcentration * amount;
 }
+/**
+ *
+ * @param alcoholAmount is in mg
+ * @param weight is in kg
+ * @returns {undefined|string}
+ */
 export const alcoholInOrganism = (alcoholAmount, weight) => {
     return alcoholAmount === 0 || !weight ? undefined : (alcoholAmount / (weight * 0.7)).toFixed(2)
 }
